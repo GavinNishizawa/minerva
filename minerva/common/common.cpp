@@ -6,10 +6,10 @@ namespace minerva {
 namespace common {
 
 void FatalError(char const* format, ...) {
-  char buffer[4096];
+  char *buffer;
   va_list va;
   va_start(va, format);
-  vsprintf(buffer, format, va);
+  vasprintf(&buffer, format, va);
   va_end(va);
   LOG(FATAL) << buffer;
   abort();
