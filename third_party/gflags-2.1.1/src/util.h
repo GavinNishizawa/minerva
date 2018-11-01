@@ -362,7 +362,13 @@ inline int SafeFOpen(FILE **fp, const char* fname, const char *mode)
 	assert(fp != NULL);
 	*fp = fopen(fname, mode);
     // errno only guaranteed to be set on failure
-	return ((*fp == NULL) ? errno : 0);
+  if (*fp == NULL) {
+    return 1;
+  }
+  else {
+    fclose(*fp);
+    return 0;
+  }
 #endif
 }
 
