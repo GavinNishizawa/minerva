@@ -20,7 +20,7 @@ dist
 
 # Generated directories
 debug
-release
+#release
 build
 deps
 lib
@@ -50,7 +50,7 @@ CMakeFiles
 Vagrantfile
 
 # configure file
-configure.in
+#configure.in
 
 # data files
 *.mat
